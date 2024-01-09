@@ -1,0 +1,258 @@
+.slick-arrow {
+  position: absolute;
+  top: 40%;
+  left: 100%;
+  width: 28px;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 20px;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.141);
+
+  border: none;
+  cursor: pointer;
+}
+
+.custom-next-arrow {
+  right: 0;
+}
+
+.custom-prev-arrow {
+  left: -5%;
+}
+
+.sliderr-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em; /* Khoảng cách giữa các sản phẩm */
+}
+
+/* CSS cho mỗi sản phẩm (item) */
+.sliderr-item {
+  border-right: 1px solid #ccc;
+  padding: 1em;
+  text-align: center;
+  width: calc(33.33% - 1em); /* 3 sản phẩm trên mỗi hàng */
+}
+
+.sliderr-item img {
+  max-width: 100%;
+}
+
+.buttonAddtocart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+  background-color: #ffb0bd;
+  outline: 3px #ffb0bd solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.buttonAddtocart .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.buttonAddtocart svg path {
+  transition: 400ms;
+}
+
+.buttonAddtocart:hover {
+  background-color: transparent;
+}
+
+.buttonAddtocart:hover .text {
+  color: #ffb0bd;
+}
+
+.buttonAddtocart:hover svg path {
+  fill: #ffb0bd;
+}
+
+.sidebar {
+  background-color: #ffb0bd;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-item {
+  margin-right: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #ffb0bd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-item:hover {
+  background-color: #fff;
+}
+
+.detail-box h6 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.btn-cart::after {
+  content: attr(data-quantity);
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+  top: 115%;
+}
+
+.icon-cart {
+  width: 24.38px;
+  height: 30.52px;
+  transition: 0.2s linear;
+}
+
+.icon-cart path {
+  fill: rgb(240, 8, 8);
+  transition: 0.2s linear;
+}
+
+.btn-cart:hover > .icon-cart {
+  transform: scale(1.2);
+}
+
+.btn-cart:hover > .icon-cart path {
+  fill: rgb(186, 34, 233);
+}
+
+.btn-cart:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: 105%;
+}
+
+.quantity {
+  display: none;
+}
+
+.favourites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 2px 2px 2px;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: #e8e8e8;
+  border-color: #ffe2e2;
+  border-style: solid;
+  border-width: 9px;
+  border-radius: 35px;
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.27, 2.5),
+    border-color 400ms ease-in-out, background-color 400ms ease-in-out;
+  word-spacing: -2px;
+}
+
+@keyframes movingBorders {
+  0% {
+    border-color: #fce4e4;
+  }
+
+  50% {
+    border-color: #ffd8d8;
+  }
+
+  90% {
+    border-color: #fce4e4;
+  }
+}
+
+.favourites:hover {
+  background-color: #eee;
+  transform: scale(105%);
+  animation: movingBorders 3s infinite;
+}
+
+.filled,
+.empty {
+  fill: rgb(255, 110, 110);
+  transition: opacity 100ms ease-in-out;
+}
+
+.filled {
+  position: absolute;
+  opacity: 0;
+}
+
+@keyframes beatingHeart {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.15);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+.favourites:hover .empty {
+  opacity: 0;
+}
+.favourites:hover .filled {
+  opacity: 1;
+  animation: beatingHeart 1.2s infinite;
+}
+
+.sidebar-vertical2 {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item2 {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-item2:hover {
+  background-color: #e0e0e0;
+}
